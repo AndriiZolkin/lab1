@@ -1,4 +1,5 @@
 import java.lang.Math;
+
 /**
  * Zolkin Andrii , #6
  */
@@ -20,37 +21,23 @@ public class Java_lab1 {
      */
     private static void task31() {
         System.out.println("task 31 ");
-        double a ;
-        int n ;
+        int n;
         double sum = 0;
-        double result ;
-        a = Math.random();
-        n = (int)(Math.random()*100);
-        System.out.println(a);
-        System.out.println(n);
-        int limit = 2*n-2;
-        for (double pow = 1;pow<limit; pow*= 2){
-            if (pow<(double)limit) {
-            System.out.println(pow+" pow");
-            } else
-                System.out.println();
-        }
-        result = 1+sum+1/(Math.pow(a,limit)) ;
-        System.out.println(result);
+        double result;
+        double a;
+        a = (int) (Math.random() * 10);
+        System.out.println("a : " + a);
+        n = (int) (Math.random() * 100);
+        System.out.println("n : " + n);
+        int limit = 2 * n - 2;
+        int pow = 1;
+        do {
+            pow = pow * 2;
+            sum = sum + 1 / (Math.pow(a, pow));
+        } while (pow < limit / 2);
 
-       /* double result = 0;
-        int n = 0;
-        int a;
-        int x = 2 * n - 2;
-        int j = 0;
-        double final_result;
-        for (double i = 1; i <= x; i *= 2) {
-            System.out.println(i);
-            result += i;
-
-        }
-        System.out.println(result);
-*/
+        result = sum + 1 / (Math.pow(a, limit));
+        System.out.println("result : " + result);
     }
 
     /**
@@ -58,7 +45,15 @@ public class Java_lab1 {
      * без возведения в степень.
      */
     private static void task56() {
-
+        double sum = 1;
+        double three_to_power = 1;
+        for (int i = 1; i < 9; i++) {
+            three_to_power *= 3;
+            sum +=1/three_to_power;
+            System.out.println("three to the power of "+i+" equals "+three_to_power+" .");
+            System.out.println("subtotal : "+sum);
+        }
+        System.out.println("result : " + sum);
     }
 
     /**
@@ -88,7 +83,7 @@ public class Java_lab1 {
 
     public static void main(String[] args) {
 //          mytasks();
-          task31();
+//          task31();
 //          task56();
 //          task81();
 //          task106();
